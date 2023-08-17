@@ -11,14 +11,14 @@
       <!-- return here: https://www.youtube.com/watch?v=FQIGu-w7xZ4&list=PL4cUxeGkcC9hp28dYyYBy3xoOdoeNw-hD&index=5 -->
 
       <p>All tasks:</p>
-      <div v-for="task in taskStore.tasks">
+      <div v-for="task in taskStore.tasks" :key="task.id">
         <TaskDetails :task="task" />
       </div>
     </div>
 
     <div v-if="filter === 'favs'">
       <p>Favorite tasks:</p>
-      <div v-for="task in taskStore.favs">
+      <div v-for="task in taskStore.favs" :key="task.id">
         <TaskDetails :task="task" />
       </div>
     </div>
