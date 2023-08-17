@@ -1,6 +1,12 @@
 # vue-tf
 Template for a frontend with Vite / Vue 3, Tailwind CSS and Flowbite.
 
+## Live demo 
+
+Check out the live demo at <https://haenno.github.io/vue-tf/>. 
+
+[![Deploy demo page to Pages](https://github.com/haenno/vue-tf/actions/workflows/gh-pages-deploy.yml/badge.svg?branch=main)](https://github.com/haenno/vue-tf/actions/workflows/gh-pages-deploy.yml)
+
 ## Honorable mentions for setup process
 
 - Install Vite / Vue 3: <https://vitejs.dev/guide/>
