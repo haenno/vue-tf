@@ -11,3 +11,4 @@ Template for a frontend with Vite / Vue 3, Tailwind CSS and Flowbite.
 - Fix 'not defined' error in ESLint: <https://stackoverflow.com/a/76664653>
 - Dark Mode: <https://flowbite.com/docs/customize/dark-mode/> and <https://tailwindcss.com/docs/dark-mode>
 - Pinia (Vue 3 store) counter example: <https://pinia.vuejs.org/introduction.html>
+- Pinia example: <https://www.youtube.com/playlist?list=PL4cUxeGkcC9hp28dYyYBy3xoOdoeNw-hD>
