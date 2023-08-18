@@ -28,7 +28,7 @@ onMounted(() => {
                 </path>
               </svg>
             </button>
-            <a href="https://github.com/haenno/" class="flex ml-2 md:mr-24">
+            <a href="#" class="flex ml-2 md:mr-24">
               <img src="./assets/logo.svg" class="h-8 mr-3" alt="FlowBite Logo" />
               <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap 
               text-gray-700 dark:text-white">vue-tf</span>
