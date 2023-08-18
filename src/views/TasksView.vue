@@ -3,8 +3,8 @@
     <h1 class="text-2xl md:text-3xl lg:text-4xl">{{ taskStore.name }}</h1>
 
     <nav class="bg-yellow-300 p-1 m-1">
-      <button @click="filter = 'all'">All</button><br />
-      <button @click="filter = 'favs'">Favorites</button>
+      <ButtonDefaultStyle @click="filter = 'all'" :button="{ text: 'All tasks' }" />
+      <ButtonDefaultStyle @click="filter = 'favs'" :button="{ text: 'Favorites' }" />
     </nav>
 
     <div v-if="filter === 'all'">
@@ -29,10 +29,12 @@
 import { defineComponent, ref } from 'vue'
 import { useTaskStore } from '@/stores/TaskStore'
 import TaskDetails from '@/components/TaskDetails.vue'
+import ButtonDefaultStyle from '@/components/ButtonDefaultStyle.vue'
 
 export default defineComponent({
   components: {
-    TaskDetails
+    TaskDetails,
+    ButtonDefaultStyle
   },
   setup() {
     const taskStore = useTaskStore()
