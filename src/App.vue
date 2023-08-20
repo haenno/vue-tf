@@ -47,7 +47,7 @@ const taskStore = useTaskStore()
         <!-- new sidebar header -->
 
         <div
-          class="flex justify-end items-center sm:w-64 absolute right-0 px-3 py-3 lg:px-5 lg:py-3"
+          class="flex justify-end items-center sm:w-64 absolute right-0 px-3 py-3"
         >
           <div class="flex-auto me-3">
             <a href="#" class="flex ml-2">
