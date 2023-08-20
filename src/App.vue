@@ -50,17 +50,17 @@ const taskStore = useTaskStore()
           class="flex justify-end items-center sm:w-64 absolute right-0 px-3 py-3"
         >
           <div class="flex-auto me-3">
-            <a href="#" class="flex ml-2">
+            <div  class="flex ml-2">
               <img
                 src="./assets/profilepic.jpg"
                 class="h-11 mr-3 rounded-full"
-                alt="haenno.de Logo"
+                alt="haenno profile picture"
               />
               <span
                 class="self-center italic text-xl font-semibold sm:text-2xl whitespace-nowrap text-gray-700 dark:text-white"
-                >haenno.de</span
+                >haenno</span
               >
-            </a>
+            </div>
           </div>
 
           <!-- Darkmode button start -->
