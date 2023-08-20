@@ -46,11 +46,9 @@ const taskStore = useTaskStore()
       <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
         <!-- new sidebar header -->
 
-        <div
-          class="flex justify-end items-center sm:w-64 absolute right-0 px-3 py-3"
-        >
+        <div class="flex justify-end items-center sm:w-64 absolute right-0 px-3 py-3">
           <div class="flex-auto me-3">
-            <div  class="flex ml-2">
+            <div class="flex ml-2">
               <img
                 src="./assets/profilepic.jpg"
                 class="h-11 mr-3 rounded-full"
@@ -263,7 +261,7 @@ const taskStore = useTaskStore()
   </header>
 
   <div class="mt-12 sm:mt-0 sm:ml-64">
-    <div class="flex h-screen">
+    <div class="flex">
       <div class="m-auto">
         <div
           class="min-h-min min-w-fit max-w-fit p-5 m-4 shadow-md opacity-85 bg-gray-50 dark:bg-gray-800 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
