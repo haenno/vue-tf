@@ -35,14 +35,12 @@
 import { defineComponent, ref } from 'vue'
 import { useTaskStore } from '@/stores/TaskStore'
 import TaskDetails from '@/components/TaskDetails.vue'
-import ButtonDefaultStyle from '@/components/ButtonDefaultStyle.vue'
 import TaskForm from '@/components/TaskForm.vue'
 import { Tabs, Tab } from 'flowbite-vue'
 
 export default defineComponent({
   components: {
     TaskDetails,
-    ButtonDefaultStyle,
     TaskForm,
     Tabs,
     Tab
