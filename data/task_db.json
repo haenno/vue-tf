@@ -1,0 +1,49 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Task 1",
+      "isFav": false
+    },
+    {
+      "id": 2,
+      "title": "Task 2",
+      "isFav": true
+    },
+    {
+      "title": "foo",
+      "isFav": true,
+      "id": 771018
+    },
+    {
+      "title": "bar",
+      "isFav": false,
+      "id": 903003
+    },
+    {
+      "title": "wiz",
+      "isFav": true,
+      "id": 806394
+    },
+    {
+      "title": "Cola",
+      "isFav": true,
+      "id": 546630
+    },
+    {
+      "title": "Beer",
+      "isFav": true,
+      "id": 500551
+    },
+    {
+      "title": "Wine",
+      "isFav": true,
+      "id": 803850
+    },
+    {
+      "title": "Milk",
+      "isFav": false,
+      "id": 867990
+    }
+  ]
+}
