@@ -27,8 +27,9 @@ export const useTaskStore = defineStore('taskstore', {
     async getTasks() {
       this.isLoading = true
       const myHeaders = new Headers();
-      myHeaders.append('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyNjUzNjQwLCJpYXQiOjE2OTI2NTMzNDAsImp0aSI6ImM5MDU2NGM3Mzc2OTQ3Zjc5ZWI5YTE5MDUyODViMWE3IiwidXNlcl9pZCI6MX0.Uz8t_1W1s-42dSZ7P57ryW90Pig3UUAk7KYgIV8IY2E');
-      myHeaders.append('Content-Type', 'application/json');
+      myHeaders.append('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyODI0ODYyLCJpYXQiOjE2OTI4MjQ1NjIsImp0aSI6ImRhYjQ1ZDllMWNiODRlMDdhMGNmYjg1YWZkODlhYjNlIiwidXNlcl9pZCI6MX0.rIYrkwdsY6fuz1AWDfqIvPdN-n1H0GmL5QJ4Nk2R3fg');
+      myHeaders.append('Content-Type', 'application/json; charset=UTF-8');
+      myHeaders.append('Accept', 'application/json');
 
 
       
@@ -43,7 +44,8 @@ export const useTaskStore = defineStore('taskstore', {
         
         this.isLoading = true
         const myHeaders = new Headers();
-        myHeaders.append('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyNjUzNjQwLCJpYXQiOjE2OTI2NTMzNDAsImp0aSI6ImM5MDU2NGM3Mzc2OTQ3Zjc5ZWI5YTE5MDUyODViMWE3IiwidXNlcl9pZCI6MX0.Uz8t_1W1s-42dSZ7P57ryW90Pig3UUAk7KYgIV8IY2E');
+        myHeaders.append('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyODI0ODYyLCJpYXQiOjE2OTI4MjQ1NjIsImp0aSI6ImRhYjQ1ZDllMWNiODRlMDdhMGNmYjg1YWZkODlhYjNlIiwidXNlcl9pZCI6MX0.rIYrkwdsY6fuz1AWDfqIvPdN-n1H0GmL5QJ4Nk2R3fg');
+        myHeaders.append('Content-Type', 'application/json');
         
         this.tasks.push(task)
       const res = await fetch("https://drf-jwt.tstsrv.de/tasks_test_api/task/", {
@@ -52,8 +54,8 @@ export const useTaskStore = defineStore('taskstore', {
          headers: myHeaders 
         })
 
-        if(res.error) {
-          console.log(res.error)
+        if(!res.ok) {
+          console.log(res.statusText)
          }
          this.isLoading = false         
       },
@@ -61,7 +63,9 @@ export const useTaskStore = defineStore('taskstore', {
     async deleteTask(id: number) {
       this.isLoading = true
       const myHeaders = new Headers();
-      myHeaders.append('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyNjUzNjQwLCJpYXQiOjE2OTI2NTMzNDAsImp0aSI6ImM5MDU2NGM3Mzc2OTQ3Zjc5ZWI5YTE5MDUyODViMWE3IiwidXNlcl9pZCI6MX0.Uz8t_1W1s-42dSZ7P57ryW90Pig3UUAk7KYgIV8IY2E');
+      myHeaders.append('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyODI0ODYyLCJpYXQiOjE2OTI4MjQ1NjIsImp0aSI6ImRhYjQ1ZDllMWNiODRlMDdhMGNmYjg1YWZkODlhYjNlIiwidXNlcl9pZCI6MX0.rIYrkwdsY6fuz1AWDfqIvPdN-n1H0GmL5QJ4Nk2R3fg');
+      myHeaders.append('Content-Type', 'application/json');
+
 
 
       this.tasks = this.tasks.filter((t: { id: number; title: string; isFav: boolean }) => {
@@ -73,15 +77,19 @@ export const useTaskStore = defineStore('taskstore', {
          headers: myHeaders          
         })
 
-        if(res.error) {
-          console.log(res.error)
-         }      
+        if(!res.ok) {
+          console.log(res.statusText)
+         }   
          this.isLoading = false
     },
     async toggleFav(id: number) {
       this.isLoading = true
       const myHeaders = new Headers();
-      myHeaders.append('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyNjUzNjQwLCJpYXQiOjE2OTI2NTMzNDAsImp0aSI6ImM5MDU2NGM3Mzc2OTQ3Zjc5ZWI5YTE5MDUyODViMWE3IiwidXNlcl9pZCI6MX0.Uz8t_1W1s-42dSZ7P57ryW90Pig3UUAk7KYgIV8IY2E');
+      myHeaders.append('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyODI0ODYyLCJpYXQiOjE2OTI4MjQ1NjIsImp0aSI6ImRhYjQ1ZDllMWNiODRlMDdhMGNmYjg1YWZkODlhYjNlIiwidXNlcl9pZCI6MX0.rIYrkwdsY6fuz1AWDfqIvPdN-n1H0GmL5QJ4Nk2R3fg');
+      myHeaders.append('Content-Type', 'application/json');
+      //myHeaders.append('Content-Type', 'application/json; charset=UTF-8');
+      //myHeaders.append('Accept', 'application/json');
+
 
 
       const task = this.tasks.find(
@@ -91,15 +99,15 @@ export const useTaskStore = defineStore('taskstore', {
         task.isFav = !task.isFav
       }
 
-      const res = await fetch("https://drf-jwt.tstsrv.de/tasks_test_api/task/" + id, {
+      const res = await fetch("https://drf-jwt.tstsrv.de/tasks_test_api/task/" + id + "/", {
         method:"PATCH",
         body: JSON.stringify( {isFav: task.isFav } ), 
         headers: myHeaders 
        })
 
-       if(res.error) {
-         console.log(res.error)
-        }
+       if(!res.ok) {
+        console.log(res.statusText)
+       }
         this.isLoading = false
     }
   }
