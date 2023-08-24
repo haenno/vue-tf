@@ -55,11 +55,14 @@
 import { defineComponent } from 'vue'
 import ButtonDefaultStyle from '@/components/ButtonDefaultStyle.vue'
 
+import { useUserAuthStore } from '@/stores/UserAuth'
+
 export default defineComponent({
   components: {
     ButtonDefaultStyle
   },
   setup() {
+    const userAuthStore = useUserAuthStore()
     return {}
   }
 })
