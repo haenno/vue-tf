@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import { useTaskStore } from '@/stores/TaskStore'
 
 const authUrl = 'https://drf-jwt.tstsrv.de/api/token/'
 
@@ -15,6 +16,10 @@ export const useUserAuthStore = defineStore('userauthstore', {
   }),
   getters: {
     userState(): boolean {
+      if (this.isLoggedIn) {
+        const taskstore = useTaskStore()
+        taskstore.getTasks()
+      }
       return this.isLoggedIn
     }
   },
@@ -32,12 +37,10 @@ export const useUserAuthStore = defineStore('userauthstore', {
         this.authToken = data.access
         this.refreshToken = data.refresh
         this.isLoggedIn = true
-        return true
       } else {
         this.authToken = ''
         this.refreshToken = ''
         this.isLoggedIn = false
-        return false
       }
     },
     async logout() {
