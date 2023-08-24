@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import { useUserAuthStore } from '@/stores/UserAuth'
 
 interface Task {
   id: number
@@ -32,11 +33,9 @@ export const useTaskStore = defineStore('taskstore', {
   actions: {
     async getTasks() {
       this.isLoading = true
+      const userauthstore = useUserAuthStore()
       const myHeaders = new Headers()
-      myHeaders.append(
-        'Authorization',
-        'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyODI0ODYyLCJpYXQiOjE2OTI4MjQ1NjIsImp0aSI6ImRhYjQ1ZDllMWNiODRlMDdhMGNmYjg1YWZkODlhYjNlIiwidXNlcl9pZCI6MX0.rIYrkwdsY6fuz1AWDfqIvPdN-n1H0GmL5QJ4Nk2R3fg'
-      )
+      myHeaders.append('Authorization', 'Bearer ' + userauthstore.authToken)
       myHeaders.append('Content-Type', 'application/json; charset=UTF-8')
       myHeaders.append('Accept', 'application/json')
 
@@ -50,11 +49,9 @@ export const useTaskStore = defineStore('taskstore', {
 
     async addTask(task: { id: number; title: string; isFav: boolean }) {
       this.isLoading = true
+      const userauthstore = useUserAuthStore()
       const myHeaders = new Headers()
-      myHeaders.append(
-        'Authorization',
-        'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyODI0ODYyLCJpYXQiOjE2OTI4MjQ1NjIsImp0aSI6ImRhYjQ1ZDllMWNiODRlMDdhMGNmYjg1YWZkODlhYjNlIiwidXNlcl9pZCI6MX0.rIYrkwdsY6fuz1AWDfqIvPdN-n1H0GmL5QJ4Nk2R3fg'
-      )
+      myHeaders.append('Authorization', 'Bearer ' + userauthstore.authToken)
       myHeaders.append('Content-Type', 'application/json')
 
       this.tasks.push(task)
@@ -72,11 +69,9 @@ export const useTaskStore = defineStore('taskstore', {
 
     async deleteTask(id: number) {
       this.isLoading = true
+      const userauthstore = useUserAuthStore()
       const myHeaders = new Headers()
-      myHeaders.append(
-        'Authorization',
-        'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyODI0ODYyLCJpYXQiOjE2OTI4MjQ1NjIsImp0aSI6ImRhYjQ1ZDllMWNiODRlMDdhMGNmYjg1YWZkODlhYjNlIiwidXNlcl9pZCI6MX0.rIYrkwdsY6fuz1AWDfqIvPdN-n1H0GmL5QJ4Nk2R3fg'
-      )
+      myHeaders.append('Authorization', 'Bearer ' + userauthstore.authToken)
       myHeaders.append('Content-Type', 'application/json')
 
       this.tasks = this.tasks.filter((t: Task) => {
@@ -95,11 +90,9 @@ export const useTaskStore = defineStore('taskstore', {
     },
     async toggleFav(id: number) {
       this.isLoading = true
+      const userauthstore = useUserAuthStore()
       const myHeaders = new Headers()
-      myHeaders.append(
-        'Authorization',
-        'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyODI0ODYyLCJpYXQiOjE2OTI4MjQ1NjIsImp0aSI6ImRhYjQ1ZDllMWNiODRlMDdhMGNmYjg1YWZkODlhYjNlIiwidXNlcl9pZCI6MX0.rIYrkwdsY6fuz1AWDfqIvPdN-n1H0GmL5QJ4Nk2R3fg'
-      )
+      myHeaders.append('Authorization', 'Bearer ' + userauthstore.authToken)
       myHeaders.append('Content-Type', 'application/json')
       //myHeaders.append('Content-Type', 'application/json; charset=UTF-8');
       //myHeaders.append('Accept', 'application/json');
