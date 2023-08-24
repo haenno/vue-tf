@@ -9,11 +9,9 @@
     <tabs v-model="activeTab" class="p-5">
       <!-- class appends to content DIV for all tabs -->
       <tab @click="filter = 'all'" name="all" title="All tasks">
-        
         <spinner v-if="taskStore.isLoading" class="m-5" color="yellow" size="10" />
 
-
-        <div v-if="filter === 'all'" >
+        <div v-if="filter === 'all'">
           <!-- return here: https://www.youtube.com/watch?v=ixxSKJi4QXI&list=PL4cUxeGkcC9hp28dYyYBy3xoOdoeNw-hD&index=8 for async actions -->
 
           <p>All tasks: (You have {{ taskStore.totalCount }} Tasks)</p>
@@ -24,9 +22,7 @@
         </div>
       </tab>
       <tab @click="filter = 'favs'" name="favs" title="Favorites">
-
-
-        <spinner v-if="taskStore.isLoading" class="m-5" color="yellow" size="10" />        
+        <spinner v-if="taskStore.isLoading" class="m-5" color="yellow" size="10" />
         <div v-if="filter === 'favs'">
           <p>Favorite tasks: (You have {{ taskStore.favCount }} Favorites )</p>
           <div v-for="task in taskStore.favs" :key="task.id">
