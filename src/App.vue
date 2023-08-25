@@ -105,6 +105,8 @@ const taskStore = useTaskStore()
             <li>
               <RouterLink
                 to="/"
+                data-drawer-target="nav-and-sidebar"
+                data-drawer-hide="nav-and-sidebar"
                 class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
                 <svg
@@ -127,6 +129,8 @@ const taskStore = useTaskStore()
             <li>
               <RouterLink
                 to="/about"
+                data-drawer-target="nav-and-sidebar"
+                data-drawer-hide="nav-and-sidebar"
                 class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
                 <svg
@@ -146,6 +150,8 @@ const taskStore = useTaskStore()
             <li>
               <RouterLink
                 to="/login"
+                data-drawer-target="nav-and-sidebar"
+                data-drawer-hide="nav-and-sidebar"
                 class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
                 <svg
@@ -169,6 +175,8 @@ const taskStore = useTaskStore()
             <li>
               <RouterLink
                 to="/tasks"
+                data-drawer-target="nav-and-sidebar"
+                data-drawer-hide="nav-and-sidebar"
                 class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
                 <svg
@@ -193,6 +201,8 @@ const taskStore = useTaskStore()
             <li>
               <RouterLink
                 to="/inbox"
+                data-drawer-target="nav-and-sidebar"
+                data-drawer-hide="nav-and-sidebar"
                 class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
                 <svg
@@ -217,6 +227,8 @@ const taskStore = useTaskStore()
               <a
                 href="#"
                 @click="userAuthStore.logout"
+                data-drawer-target="nav-and-sidebar"
+                data-drawer-hide="nav-and-sidebar"
                 class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
                 <svg
@@ -236,6 +248,8 @@ const taskStore = useTaskStore()
             <li>
               <a
                 href="#"
+                data-drawer-target="nav-and-sidebar"
+                data-drawer-hide="nav-and-sidebar"
                 class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
                 <svg
@@ -262,6 +276,8 @@ const taskStore = useTaskStore()
             <li>
               <a
                 href="#"
+                data-drawer-target="nav-and-sidebar"
+                data-drawer-hide="nav-and-sidebar"
                 class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
                 <svg
