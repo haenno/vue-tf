@@ -1,33 +1,33 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8"/>
+    <link href="/favicon.ico" rel="icon"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>vue-tf</title>
     <script>
-      // It's best to inline this in `head` to avoid FOUC (flash of unstyled content) when changing pages or themes
-      if (
-        localStorage.getItem('color-theme') === 'dark' ||
-        (!('color-theme' in localStorage) &&
-          window.matchMedia('(prefers-color-scheme: dark)').matches)
-      ) {
-        document.documentElement.classList.add('dark')
-      } else {
-        document.documentElement.classList.remove('dark')
-      }
+        // It's best to inline this in `head` to avoid FOUC (flash of unstyled content) when changing pages or themes
+        if (
+            localStorage.getItem('color-theme') === 'dark' ||
+            (!('color-theme' in localStorage) &&
+                window.matchMedia('(prefers-color-scheme: dark)').matches)
+        ) {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
     </script>
-  </head>
+</head>
 
-  <body
-    style="
+<body
+        style="
       background-image: url(https://picsum.photos/1920/1080);
       background-repeat: no-repeat;
       background-size: cover;
       background-attachment: fixed;
     "
-  >
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+>
+<div id="app"></div>
+<script src="/src/main.ts" type="module"></script>
+</body>
 </html>

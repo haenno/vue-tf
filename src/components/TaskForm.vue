@@ -1,15 +1,15 @@
 <template>
   <form @submit.prevent="handleSubmit">
-    <input type="text" placeholder="I need to..." v-model="newTask" />
+    <input v-model="newTask" placeholder="I need to..." type="text"/>
 
-    <ButtonDefaultStyle type :button="{ text: 'Add' }" />
+    <ButtonDefaultStyle :button="{ text: 'Add' }" type/>
   </form>
 </template>
 
 <script lang="ts">
-import { ref } from 'vue'
+import {ref} from 'vue'
 import ButtonDefaultStyle from './ButtonDefaultStyle.vue'
-import { useTaskStore } from '@/stores/TaskStore'
+import {useTaskStore} from '@/stores/TaskStore'
 
 export default {
   setup() {
@@ -26,7 +26,7 @@ export default {
         newTask.value = ''
       }
     }
-    return { newTask, handleSubmit }
+    return {newTask, handleSubmit}
   },
 
   components: {
