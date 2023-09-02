@@ -26,6 +26,9 @@ const userAuthStore = useUserAuthStore()
 onMounted(() => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const flowbiteReferecnce = initFlowbite
+
+  // check if user is logged in by checking the session storage
+  userAuthStore.init()
 })
 
 const taskStore = useTaskStore()

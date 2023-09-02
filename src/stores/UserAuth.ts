@@ -35,16 +35,33 @@ export const useUserAuthStore = defineStore('userauthstore', {
       if (response.ok) {
         const data = await response.json()
         this.authToken = data.access
+        sessionStorage.setItem('authToken', this.authToken)
         this.refreshToken = data.refresh
+        sessionStorage.setItem('refreshToken', this.refreshToken)
         this.isLoggedIn = true
       } else {
         this.authToken = ''
+        sessionStorage.removeItem('authToken')
         this.refreshToken = ''
+        sessionStorage.removeItem('refreshToken')
         this.isLoggedIn = false
       }
     },
     async logout() {
       this.isLoggedIn = false
+    },
+    async init() {
+      if (sessionStorage.getItem('refreshToken') && sessionStorage.getItem('authToken')) {
+        this.authToken = sessionStorage.getItem('authToken')!
+        this.refreshToken = sessionStorage.getItem('refreshToken')!
+        this.isLoggedIn = true
+      } else {
+        this.authToken = ''
+        sessionStorage.removeItem('authToken')
+        this.refreshToken = ''
+        sessionStorage.removeItem('refreshToken')
+        this.isLoggedIn = false
+      }
     }
   }
 })
