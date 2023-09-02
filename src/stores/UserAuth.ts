@@ -41,32 +41,26 @@ export const useUserAuthStore = defineStore('userauthstore', {
 
         this.authToken = data.access
         authCookie.set('authToken', this.authToken)
-        sessionStorage.setItem('authToken', this.authToken)
 
         this.refreshToken = data.refresh
         authCookie.set('refreshToken', this.refreshToken)
-        sessionStorage.setItem('refreshToken', this.refreshToken)
 
         this.isLoggedIn = true
       } else {
         this.authToken = ''
         authCookie.remove('authToken')
-        sessionStorage.removeItem('authToken')
 
         this.refreshToken = ''
         authCookie.remove('refreshToken')
-        sessionStorage.removeItem('refreshToken')
 
         this.isLoggedIn = false
       }
     },
     async logout() {
       this.authToken = ''
-      sessionStorage.removeItem('authToken')
       authCookie.remove('authToken')
 
       this.refreshToken = ''
-      sessionStorage.removeItem('refreshToken')
       authCookie.remove('refreshToken')
 
       this.isLoggedIn = false
@@ -74,33 +68,17 @@ export const useUserAuthStore = defineStore('userauthstore', {
     async init() {
       this.isLoggedIn = false
 
-      if (sessionStorage.getItem('refreshToken') && sessionStorage.getItem('authToken')) {
-        this.authToken = sessionStorage.getItem('authToken')!
-        authCookie.set('authToken', this.authToken)
-
-        this.refreshToken = sessionStorage.getItem('refreshToken')!
-        authCookie.set('refreshToken', this.refreshToken)
-
-        this.isLoggedIn = true
-      }
-
       if (authCookie.get('refreshToken') && authCookie.get('authToken')) {
         this.authToken = authCookie.get('authToken')!
-        sessionStorage.setItem('authToken', this.authToken)
-
         this.refreshToken = authCookie.get('refreshToken')!
-        sessionStorage.setItem('refreshToken', this.refreshToken)
-
         this.isLoggedIn = true
       }
 
       if (this.isLoggedIn === false) {
         this.authToken = ''
-        sessionStorage.removeItem('authToken')
         authCookie.remove('authToken')
 
         this.refreshToken = ''
-        sessionStorage.removeItem('refreshToken')
         authCookie.remove('refreshToken')
       }
     }
