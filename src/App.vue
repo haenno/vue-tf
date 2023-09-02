@@ -24,7 +24,8 @@ import {
 const userAuthStore = useUserAuthStore()
 
 onMounted(() => {
-  const flowbiteReferecnce = initFlowbite;
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const flowbiteReferecnce = initFlowbite
 })
 
 const taskStore = useTaskStore()

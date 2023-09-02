@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import {Modal} from 'flowbite-vue'
-import {ref} from 'vue'
+import { Modal } from 'flowbite-vue'
+import { ref } from 'vue'
 import ButtonDefaultStyle from '@/components/ButtonDefaultStyle.vue'
 
 const isShowModal = ref(false)
@@ -17,7 +17,7 @@ function showModal() {
 <template>
   <h1>You did it!</h1>
   <main>
-    <ButtonDefaultStyle :button="{ text: 'Click me' }" @click="showModal"/>
+    <ButtonDefaultStyle :button="{ text: 'Click me' }" @click="showModal" />
 
     <Modal v-if="isShowModal" @close="closeModal">
       <template #header>
@@ -39,14 +39,14 @@ function showModal() {
       <template #footer>
         <div class="flex justify-between">
           <ButtonDefaultStyle
-              :button="{ text: 'Decline' }"
-              class="hover:bg-red-400 dark:hover:bg-red-500"
-              @click="closeModal"
+            :button="{ text: 'Decline' }"
+            class="hover:bg-red-400 dark:hover:bg-red-500"
+            @click="closeModal"
           />
           <ButtonDefaultStyle
-              :button="{ text: 'I accept' }"
-              class="hover:bg-green-400 dark:hover:bg-green-500"
-              @click="closeModal"
+            :button="{ text: 'I accept' }"
+            class="hover:bg-green-400 dark:hover:bg-green-500"
+            @click="closeModal"
           />
         </div>
       </template>
