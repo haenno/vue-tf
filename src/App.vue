@@ -163,7 +163,7 @@ const taskStore = useTaskStore()
     </aside>
   </header>
 
-  <div class="mt-12 sm:mt-0 sm:ml-64">
+  <div class="mt-0 sm:mt-0 sm:ml-64">
     <div class="flex">
       <div class="m-auto">
         <div
