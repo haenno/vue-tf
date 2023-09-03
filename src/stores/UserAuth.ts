@@ -5,7 +5,17 @@ import Cookies from 'js-cookie'
 
 const authCookie = Cookies.withAttributes({ sameSite: 'strict', secure: true })
 
+/*
+api/token/ [name='token_obtain_pair'] --> Takes a set of user credentials and returns an access and refresh JSON web token pair to prove the authentication of those credentials.
+api/token/verify/ [name='token_verify'] --> Takes a token and indicates if it is valid. This view provides no information about a token's fitness for a particular use.
+api/token/refresh/ [name='token_refresh'] --> Takes a refresh type JSON web token and returns an access type JSON web token if the refresh token is valid.
+api/token/blacklist/ [name='token_blacklist'] --> Takes a token and blacklists it. Must be used with the `rest_framework_simplejwt.token_blacklist` app installed.
+*/
+
 const authUrl = 'https://drf-jwt.tstsrv.de/api/token/'
+const verifyTokenUrl = 'https://drf-jwt.tstsrv.de/api/token/verify/'
+const refreshTokenUrl = 'https://drf-jwt.tstsrv.de/api/token/refresh/'
+const blacklistTokenUrl = 'https://drf-jwt.tstsrv.de/api/token/blacklist/'
 
 const myHeaders = new Headers()
 myHeaders.append('Content-Type', 'application/json; charset=UTF-8')
@@ -80,6 +90,14 @@ export const useUserAuthStore = defineStore('userauthstore', {
 
         this.refreshToken = ''
         authCookie.remove('refreshToken')
+      }
+    },
+    async validateTokens() {
+      console.log('validateTokens: start')
+      if (this.isLoggedIn) {
+        console.log('validateTokens: user is logged in')
+      } else {
+        console.log('validateTokens: user is NOT logged in')
       }
     }
   }
