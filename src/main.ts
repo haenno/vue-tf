@@ -4,6 +4,9 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 import './index.css'
+import type { RouteLocationNormalized } from 'vue-router'
+
+import { useUserAuthStore } from '@/stores/UserAuth'
 
 const app = createApp(App)
 
@@ -12,6 +15,7 @@ app.use(router)
 
 app.mount('#app')
 
+const userAuthStore = useUserAuthStore()
 // Darkmode start
 
 const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon')
@@ -57,3 +61,24 @@ themeToggleBtn?.addEventListener('click', function () {
 })
 
 // Darkmode end
+
+// Router Guards
+
+router.beforeEach((to: RouteLocationNormalized, from: RouteLocationNormalized, next: Function) => {
+  if (
+    to.matched.some((record) => record.meta.requiresLoggedInUser) &&
+    !userAuthStore.userStateIsLoggedIn
+  ) {
+    next({ name: 'login' })
+    return
+  }
+
+  if (to.matched.some((record) => record.meta.hideForAuth) && userAuthStore.userStateIsLoggedIn) {
+    console.log('router.beforeEach: hideForAuth >> yes >> logged in >> redirect to home')
+    next({ name: 'home' })
+    return
+  }
+
+  next()
+  return
+})

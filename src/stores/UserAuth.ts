@@ -29,7 +29,7 @@ export const useUserAuthStore = defineStore('userauthstore', {
     refreshToken: ''
   }),
   getters: {
-    userState(): boolean {
+    userStateIsLoggedIn(): boolean {
       if (this.isLoggedIn) {
         const taskstore = useTaskStore()
         taskstore.getTasks()

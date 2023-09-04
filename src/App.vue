@@ -117,7 +117,7 @@ const taskStore = useTaskStore()
             </NavLinkStyle>
 
             <NavLinkStyle
-              v-if="!userAuthStore.userState"
+              v-if="!userAuthStore.userStateIsLoggedIn"
               :navLink="{ text: 'Login', target: 'login' }"
             >
               <ArrowRightOnRectangleIcon
@@ -127,7 +127,7 @@ const taskStore = useTaskStore()
             </NavLinkStyle>
 
             <NavLinkStyle
-              v-if="userAuthStore.userState"
+              v-if="userAuthStore.userStateIsLoggedIn"
               :navLink="{ text: 'Tasks', target: 'tasks' }"
             >
               <RectangleStackIcon
@@ -136,7 +136,7 @@ const taskStore = useTaskStore()
               />
               <template v-slot:hint>
                 <span
-                  v-if="userAuthStore.userState"
+                  v-if="userAuthStore.userStateIsLoggedIn"
                   class="inline-flex items-center justify-center w-3 h-3 p-3 ml-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300"
                   >{{ taskStore.totalCount }}</span
                 >
@@ -144,7 +144,7 @@ const taskStore = useTaskStore()
             </NavLinkStyle>
 
             <NavLinkStyle
-              v-if="userAuthStore.userState"
+              v-if="userAuthStore.userStateIsLoggedIn"
               :navLink="{ text: 'Inbox', target: 'inbox' }"
             >
               <InboxArrowDownIcon
@@ -160,7 +160,7 @@ const taskStore = useTaskStore()
             </NavLinkStyle>
 
             <NavLinkStyle
-              v-if="userAuthStore.userState"
+              v-if="userAuthStore.userStateIsLoggedIn"
               :navLink="{ text: 'Logout', target: '/#' }"
               @click="userAuthStore.logout"
             >
@@ -171,7 +171,7 @@ const taskStore = useTaskStore()
             </NavLinkStyle>
 
             <NavLinkStyle
-              v-if="!userAuthStore.userState"
+              v-if="!userAuthStore.userStateIsLoggedIn"
               :navLink="{ text: 'Register', target: 'signup' }"
             >
               <PencilSquareIcon
