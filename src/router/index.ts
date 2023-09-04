@@ -4,6 +4,7 @@ import LoginView from '../views/LoginView.vue'
 import TasksView from '../views/TasksView.vue'
 import InboxView from '../views/InboxView.vue'
 import LogoutView from '../views/LogoutView.vue'
+import RegisterView from '../views/RegisterView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -64,6 +65,15 @@ const router = createRouter({
       meta: {
         requiresLoggedInUser: true,
         hideForAuth: false
+      }
+    },
+    {
+      path: '/signup',
+      name: 'signup',
+      component: RegisterView,
+      meta: {
+        requiresLoggedInUser: false,
+        hideForAuth: true
       }
     }
   ]

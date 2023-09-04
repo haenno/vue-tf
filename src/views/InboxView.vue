@@ -1,7 +1,7 @@
 <template>
   <div>inbox view</div>
   <spinner class="m-5" color="yellow" size="10" />
-  <Pagination v-model="currentPage" :slice-length="4" :total-pages="100" class="w-80"></Pagination>
+  <Pagination :class="['w-fit']" v-model="currentPage" :total-pages="30"> </Pagination>
 </template>
 
 <script lang="ts">
@@ -15,7 +15,7 @@ export default defineComponent({
     Spinner
   },
   setup() {
-    const currentPage = ref(19)
+    const currentPage = ref(1)
     return { currentPage }
   }
 })

@@ -1,10 +1,7 @@
-
 <template>
   <h1>Logout</h1>
   <ButtonDefaultStyle :button="{ text: 'Logout' }" @click="logoutClick" />
 </template>
-
-
 
 <script lang="ts">
 import { defineComponent } from 'vue'
@@ -24,7 +21,6 @@ export default defineComponent({
   setup() {
     const userAuthStore = useUserAuthStore()
     return { userAuthStore }
-  },
+  }
 })
-
 </script>
