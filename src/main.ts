@@ -69,12 +69,13 @@ router.beforeEach((to: RouteLocationNormalized, from: RouteLocationNormalized, n
     to.matched.some((record) => record.meta.requiresLoggedInUser) &&
     !userAuthStore.userStateIsLoggedIn
   ) {
+    console.log('router guard: user is not logged in, redirecting to login')
     next({ name: 'login' })
     return
   }
 
   if (to.matched.some((record) => record.meta.hideForAuth) && userAuthStore.userStateIsLoggedIn) {
-    console.log('router.beforeEach: hideForAuth >> yes >> logged in >> redirect to home')
+    console.log('router guard: user is logged in, redirecting to home')
     next({ name: 'home' })
     return
   }

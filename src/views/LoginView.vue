@@ -33,6 +33,9 @@
           type="password"
         />
       </div>
+      <div if="error_message">
+        <p class="text-sm font-medium text-red-500 dark:text-red-400">{{ error_message }}</p>
+      </div>
       <div>
         <ButtonDefaultStyle :button="{ text: 'Login' }" class="w-full" type="submit" />
       </div>
@@ -65,6 +68,7 @@ export default defineComponent({
   },
   data() {
     return {
+      error_message: '',
       username: '',
       password: ''
     }
@@ -75,7 +79,15 @@ export default defineComponent({
   },
   methods: {
     sendLogin() {
-      this.userAuthStore.login(this.username, this.password)
+      let login_result = this.userAuthStore.login(this.username, this.password)
+
+      login_result.then((result) => {
+        if (result?.status === 200) {
+          this.$router.push({ name: 'tasks' })
+        } else {
+          this.error_message = result?.message
+        }
+      })
     }
   }
 })

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
 import { initFlowbite } from 'flowbite'
 import { onMounted } from 'vue'
 import { useTaskStore } from './stores/TaskStore'
@@ -18,7 +18,6 @@ import {
   InboxArrowDownIcon,
   InformationCircleIcon,
   PencilSquareIcon,
-  QuestionMarkCircleIcon,
   RectangleStackIcon
 } from '@heroicons/vue/24/outline'
 

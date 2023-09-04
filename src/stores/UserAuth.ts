@@ -56,8 +56,13 @@ export const useUserAuthStore = defineStore('userauthstore', {
         authCookie.set('refreshToken', this.refreshToken)
 
         this.isLoggedIn = true
+
+        return { status: response.status, message: response.statusText }
       } else {
         this.logout()
+        const content = await response.json()
+        return { status: response.status, message: content.detail }
+        return
       }
     },
     async logout() {
