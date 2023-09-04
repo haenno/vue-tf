@@ -3,9 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import LoginView from '../views/LoginView.vue'
 import TasksView from '../views/TasksView.vue'
 import InboxView from '../views/InboxView.vue'
-//import { useUserAuthStore } from '@/stores/UserAuth'
-
-//const userAuthStore = useUserAuthStore()
+import LogoutView from '../views/LogoutView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -58,6 +56,15 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/AboutView.vue')
+    },
+    {
+      path: '/logout',
+      name: 'logout',
+      component: LogoutView,
+      meta: {
+        requiresLoggedInUser: true,
+        hideForAuth: false
+      }
     }
   ]
 })

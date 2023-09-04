@@ -62,7 +62,6 @@ export const useUserAuthStore = defineStore('userauthstore', {
         this.logout()
         const content = await response.json()
         return { status: response.status, message: content.detail }
-        return
       }
     },
     async logout() {

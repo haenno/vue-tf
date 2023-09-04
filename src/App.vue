@@ -160,8 +160,7 @@ const taskStore = useTaskStore()
 
             <NavLinkStyle
               v-if="userAuthStore.userStateIsLoggedIn"
-              :navLink="{ text: 'Logout', target: '/#' }"
-              @click="userAuthStore.logout"
+              :navLink="{ text: 'Logout', target: 'logout' }"
             >
               <ArrowLeftOnRectangleIcon
                 aria-hidden="true"
