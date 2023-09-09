@@ -48,9 +48,15 @@ jobs:
         with:
           # Upload dist repository
           path: './dist'
+      - name: Set BASE_PATH for GitHub Pages
+        run: |
+          echo "BASE_PATH=vue-tf/" >> "$GITHUB_ENV"
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
+      - name: Set BASE_PATH for haenno.de
+        run: |
+          echo "BASE_PATH=" >> "$GITHUB_ENV"
       - name: Push to haenno.de
         uses: crykn/copy_folder_to_another_repo_action@v1.0.6
         env:
