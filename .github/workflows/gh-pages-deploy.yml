@@ -56,7 +56,7 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source_folder: 'test_files'
+          source_folder: './dist'
           destination_repo: 'haenno/haenno.de'
           destination_folder: 'html'
           user_email: 'haenno@web.de'
