@@ -61,4 +61,5 @@ jobs:
           destination_folder: 'html'
           user_email: 'haenno@web.de'
           user_name: 'haenno'
+          destination_branch: 'main'
           commit_msg: '[GHA] Update the HTML files.'
