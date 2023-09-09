@@ -39,7 +39,7 @@ jobs:
         run: npm install
       - name: Set BASE_PATH for GitHub Pages
         run: |
-          echo "BASE_PATH=vue-tf/" >> "$GITHUB_ENV"
+          echo "BASE_PATH=/vue-tf/" >> "$GITHUB_ENV"
 
       - name: Build
         run: npm run build
@@ -58,7 +58,7 @@ jobs:
 
       - name: Set BASE_PATH for haenno.de
         run: |
-          echo "BASE_PATH=" >> "$GITHUB_ENV"
+          echo "BASE_PATH=/" >> "$GITHUB_ENV"
       - name: Build for haenno.de
         run: npm run build
 
