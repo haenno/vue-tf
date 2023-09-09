@@ -39,7 +39,7 @@ export const useTaskStore = defineStore('taskstore', {
       myHeaders.append('Content-Type', 'application/json; charset=UTF-8')
       myHeaders.append('Accept', 'application/json')
 
-      const res = await fetch('https://drf-jwt.tstsrv.de/tasks_test_api/task/', {
+      const res = await fetch('https://drfjwt.haenno.de/tasks_test_api/task/', {
         headers: myHeaders
       })
       const data = await res.json()
@@ -55,7 +55,7 @@ export const useTaskStore = defineStore('taskstore', {
       myHeaders.append('Content-Type', 'application/json')
 
       this.tasks.push(task)
-      const res = await fetch('https://drf-jwt.tstsrv.de/tasks_test_api/task/', {
+      const res = await fetch('https://drfjwt.haenno.de/tasks_test_api/task/', {
         method: 'POST',
         body: JSON.stringify(task),
         headers: myHeaders
@@ -78,7 +78,7 @@ export const useTaskStore = defineStore('taskstore', {
         return t.id !== id
       })
 
-      const res = await fetch('https://drf-jwt.tstsrv.de/tasks_test_api/task/' + id, {
+      const res = await fetch('https://drfjwt.haenno.de/tasks_test_api/task/' + id, {
         method: 'DELETE',
         headers: myHeaders
       })
@@ -108,7 +108,7 @@ export const useTaskStore = defineStore('taskstore', {
         task.isFav = !task.isFav
       }
 
-      const res = await fetch('https://drf-jwt.tstsrv.de/tasks_test_api/task/' + id + '/', {
+      const res = await fetch('https://drfjwt.haenno.de/tasks_test_api/task/' + id + '/', {
         method: 'PATCH',
         body: JSON.stringify({
           isFav: task.isFav

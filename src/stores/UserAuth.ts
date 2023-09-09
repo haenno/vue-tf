@@ -12,10 +12,10 @@ api/token/refresh/ [name='token_refresh'] --> Takes a refresh type JSON web toke
 api/token/blacklist/ [name='token_blacklist'] --> Takes a token and blacklists it. Must be used with the `rest_framework_simplejwt.token_blacklist` app installed.
 */
 
-const authUrl = 'https://drf-jwt.tstsrv.de/api/token/'
-const verifyTokenUrl = 'https://drf-jwt.tstsrv.de/api/token/verify/'
-const refreshTokenUrl = 'https://drf-jwt.tstsrv.de/api/token/refresh/'
-const blacklistTokenUrl = 'https://drf-jwt.tstsrv.de/api/token/blacklist/'
+const authUrl = 'https://drfjwt.haenno.de/api/token/'
+const verifyTokenUrl = 'https://drfjwt.haenno.de/api/token/verify/'
+const refreshTokenUrl = 'https://drfjwt.haenno.de/api/token/refresh/'
+const blacklistTokenUrl = 'https://drfjwt.haenno.de/api/token/blacklist/'
 
 const myHeaders = new Headers()
 myHeaders.append('Content-Type', 'application/json; charset=UTF-8')
