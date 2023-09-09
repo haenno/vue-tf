@@ -1,14 +1,14 @@
 # vue-tf
 
-Template for a frontend with Vite / Vue 3, Tailwind CSS and Flowbite.
+Template for a frontend with Vite / Vue 3, Tailwind CSS and Flowbite. Also, a simple implementation of pinia as a store, access to an API (tasks: add, delete, change), and login to an API with saving the JWT token to a secure cookie.
 
 ## Live demo
 
-Check out the live demo at <https://haenno.github.io/vue-tf/>.
+Check out the live demo at [haenno.de](https://haenno.de) and [haenno.github.io/vue-tf/](https://haenno.github.io/vue-tf/).
 
-[![Deploy demo page to Pages](https://github.com/haenno/vue-tf/actions/workflows/gh-pages-deploy.yml/badge.svg?branch=main)](https://github.com/haenno/vue-tf/actions/workflows/gh-pages-deploy.yml)
+[![Demo deployment](https://github.com/haenno/vue-tf/actions/workflows/gh-pages-deploy.yml/badge.svg?branch=main)](https://github.com/haenno/vue-tf/actions/workflows/gh-pages-deploy.yml)
 
-## Honorable mentions for setup process
+## Honorable mentions, useful resources
 
 - Install Vite / Vue 3: <https://vitejs.dev/guide/>
 - Install Flowbite: <https://github.com/themesberg/flowbite-vue>
