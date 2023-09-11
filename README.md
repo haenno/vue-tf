@@ -19,3 +19,15 @@ Check out the live demo at [haenno.de](https://haenno.de) and [haenno.github.io/
 - Dark Mode: <https://flowbite.com/docs/customize/dark-mode/> and <https://tailwindcss.com/docs/dark-mode>
 - Pinia (Vue 3 store) counter example: <https://pinia.vuejs.org/introduction.html>
 - Pinia example: <https://www.youtube.com/playlist?list=PL4cUxeGkcC9hp28dYyYBy3xoOdoeNw-hD>
+
+## Tailwind CSS / Flowbite colors for bright and dark mode
+
+| Element | Bright | Dark |
+| --- | --- | --- |
+| Background | `x` | `x` |
+| Nav-Background | `x` | `x` |
+| Nav-Text | `x` | `x` |
+| Button-Background | `bg-gray-200` | `dark:bg-gray-600` |
+| Button-Text | `text-gray-900` | `dark:text-white` |
+| Button-Hover | `hover:bg-gray-300` | `dark:hover:bg-gray-700` |
+| Button-Background-Active | `bg-gray-200` | `dark:bg-gray-600` |
