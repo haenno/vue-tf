@@ -45,22 +45,22 @@ const taskStore = useTaskStore()
     <nav class="fixed top-0 left-0 z-50 w-14 h-14">
       <button
         aria-controls="nav-and-sidebar"
-        class="m-1 p-2 text-sm rounded-lg focus:outline-none focus:ring-2 sm:invisible bg-slate-100 text-stone-500 first-letter:hover:bg-stone-100 focus:ring-stone-200 dark:bg-stone-700 dark:text-stone-400 dark:hover:bg-stone-700 dark:focus:ring-stone-600 shadow"
+        class="m-1 p-2 text-sm rounded-lg focus:outline-none focus:ring-2 sm:invisible bg-slate-100 text-gray-500 first-letter:hover:bg-gray-100 focus:ring-gray-200 dark:bg-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 shadow"
         data-drawer-target="nav-and-sidebar"
         data-drawer-toggle="nav-and-sidebar"
         type="button"
       >
         <span class="sr-only">Open sidebar</span>
-        <Bars3Icon aria-hidden="true" class="h-6 w-6 text-stone-500 dark:text-stone-400" />
+        <Bars3Icon aria-hidden="true" class="h-6 w-6 text-gray-500 dark:text-gray-400" />
       </button>
     </nav>
 
     <aside
       id="nav-and-sidebar"
       aria-label="Sidebar"
-      class="fixed top-0 left-0 z-40 w-64 h-screen duration-500 transition-transform -translate-x-full sm:translate-x-0 bg-white border-r border-stone-200 dark:bg-stone-800 dark:border-stone-700"
+      class="fixed top-0 left-0 z-40 w-64 h-screen duration-500 transition-transform -translate-x-full sm:translate-x-0 bg-white border-r border-gray-200 dark:bg-gray-800 dark:border-gray-700"
     >
-      <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-stone-800">
+      <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
         <!-- new sidebar header -->
 
         <div class="flex justify-end items-center sm:w-64 absolute right-0 px-3 py-3">
@@ -72,24 +72,24 @@ const taskStore = useTaskStore()
                 src="./assets/profilepic.jpg"
               />
               <span
-                class="self-center italic text-xl font-semibold sm:text-2xl whitespace-nowrap text-stone-700 dark:text-white"
+                class="self-center italic text-xl font-semibold sm:text-2xl whitespace-nowrap text-gray-700 dark:text-white"
                 >haenno</span
               >
             </div>
           </div>
 
           <!-- Darkmode button start -->
-          <div class="text-sm rounded-full me-2 bg-stone-200 dark:bg-stone-600">
+          <div class="text-sm rounded-full me-2 bg-gray-200 dark:bg-gray-600">
             <button
               id="theme-toggle"
-              class="text-stone-500 dark:text-stone-400 hover:bg-stone-300 dark:hover:bg-stone-700 focus:outline-none rounded-full text-sm p-2.5"
+              class="text-gray-500 dark:text-gray-400 hover:bg-gray-300 dark:hover:bg-gray-700 focus:outline-none rounded-full text-sm p-2.5"
               type="button"
             >
               <div id="theme-toggle-dark-icon" class="hidden">
-                <MoonIcon class="h-5 w-5 text-stone-500 dark:text-stone-400" />
+                <MoonIcon class="h-5 w-5 text-gray-500 dark:text-gray-400" />
               </div>
               <div id="theme-toggle-light-icon" class="hidden">
-                <SunIcon class="h-5 w-5 text-stone-500 dark:text-stone-400" />
+                <SunIcon class="h-5 w-5 text-gray-500 dark:text-gray-400" />
               </div>
             </button>
           </div>
@@ -102,14 +102,14 @@ const taskStore = useTaskStore()
             <NavLinkStyle :navLink="{ text: 'Home', target: '/' }">
               <HomeIcon
                 aria-hidden="true"
-                class="flex-shrink-0 w-6 h-6 text-stone-500 transition duration-75 dark:text-stone-400 group-hover:text-stone-900 dark:group-hover:text-white"
+                class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
               />
             </NavLinkStyle>
 
             <NavLinkStyle :navLink="{ text: 'News', target: 'news' }">
               <InformationCircleIcon
                 aria-hidden="true"
-                class="flex-shrink-0 w-6 h-6 text-stone-500 transition duration-75 dark:text-stone-400 group-hover:text-stone-900 dark:group-hover:text-white"
+                class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
               />
             </NavLinkStyle>
 
@@ -119,7 +119,7 @@ const taskStore = useTaskStore()
             >
               <ArrowRightOnRectangleIcon
                 aria-hidden="true"
-                class="flex-shrink-0 w-6 h-6 text-stone-500 transition duration-75 dark:text-stone-400 group-hover:text-stone-900 dark:group-hover:text-white"
+                class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
               />
             </NavLinkStyle>
 
@@ -129,7 +129,7 @@ const taskStore = useTaskStore()
             >
               <RectangleStackIcon
                 aria-hidden="true"
-                class="flex-shrink-0 w-6 h-6 text-stone-500 transition duration-75 dark:text-stone-400 group-hover:text-stone-900 dark:group-hover:text-white"
+                class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
               />
               <template v-slot:hint>
                 <span
@@ -146,11 +146,11 @@ const taskStore = useTaskStore()
             >
               <InboxArrowDownIcon
                 aria-hidden="true"
-                class="flex-shrink-0 w-6 h-6 text-stone-500 transition duration-75 dark:text-stone-400 group-hover:text-stone-900 dark:group-hover:text-white"
+                class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
               />
               <template v-slot:hint>
                 <span
-                  class="inline-flex items-center justify-center px-2 ml-3 text-sm font-medium text-stone-800 bg-stone-100 rounded-full dark:bg-stone-700 dark:text-stone-300"
+                  class="inline-flex items-center justify-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300"
                   >Pro</span
                 >
               </template>
@@ -162,7 +162,7 @@ const taskStore = useTaskStore()
             >
               <ArrowLeftOnRectangleIcon
                 aria-hidden="true"
-                class="flex-shrink-0 w-6 h-6 text-stone-500 transition duration-75 dark:text-stone-400 group-hover:text-stone-900 dark:group-hover:text-white"
+                class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
               />
             </NavLinkStyle>
 
@@ -172,7 +172,7 @@ const taskStore = useTaskStore()
             >
               <PencilSquareIcon
                 aria-hidden="true"
-                class="flex-shrink-0 w-6 h-6 text-stone-500 transition duration-75 dark:text-stone-400 group-hover:text-stone-900 dark:group-hover:text-white"
+                class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
               />
             </NavLinkStyle>
           </ul>
@@ -185,7 +185,7 @@ const taskStore = useTaskStore()
     <div class="flex">
       <div class="m-auto">
         <div
-          class="min-h-min min-w-fit max-w-fit p-5 m-4 shadow-md opacity-85 bg-stone-50 dark:bg-stone-800 text-stone-900 rounded-lg dark:text-white"
+          class="min-h-min min-w-fit max-w-fit p-5 m-4 shadow-md opacity-85 bg-gray-50 dark:bg-gray-800 text-gray-900 rounded-lg dark:text-white"
         >
           <RouterView />
         </div>
