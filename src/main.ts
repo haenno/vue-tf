@@ -8,10 +8,18 @@ import type { RouteLocationNormalized } from 'vue-router'
 
 import { useUserAuthStore } from '@/stores/UserAuth'
 
+import ToastPlugin from 'vue-toast-notification'
+import 'vue-toast-notification/dist/theme-default.css'
+
 const app = createApp(App)
 
 app.use(createPinia())
 app.use(router)
+app.use(ToastPlugin, {
+  // One of the options
+  position: 'bottom',
+  dismissible: true
+})
 
 app.mount('#app')
 

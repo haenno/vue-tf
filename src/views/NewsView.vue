@@ -42,22 +42,6 @@
             class="bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-900 dark:text-white"
           >
             <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap">
-              Apple MacBook Pro 17"
-            </th>
-            <td class="px-6 py-4">Silver</td>
-            <td class="px-6 py-4">2</td>
-
-            <td class="px-6 py-4">
-              <ArrowPathIcon
-                class="w-5 h-5 hover:cursor-pointer hover:animate-spin"
-                @click="action_button('foo bar wiz')"
-              />
-            </td>
-          </tr>
-          <tr
-            class="bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-900 dark:text-white"
-          >
-            <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap">
               Microsoft Surface Pro
             </th>
             <td class="px-6 py-4">White</td>
@@ -66,7 +50,12 @@
             <td class="px-6 py-4">
               <ArrowPathIcon
                 class="w-5 h-5 hover:cursor-pointer hover:animate-spin"
-                @click="action_button('12qq1q1q1q')"
+                @click="
+                  $toast.open({
+                    message: 'Thats the default type!',
+                    type: 'default'
+                  })
+                "
               />
             </td>
           </tr>
@@ -80,7 +69,12 @@
             <td class="px-6 py-4">
               <ArrowPathIcon
                 class="w-5 h-5 hover:cursor-pointer hover:animate-spin"
-                @click="action_button('2124')"
+                @click="
+                  $toast.open({
+                    message: 'It works!',
+                    type: 'success'
+                  })
+                "
               />
             </td>
           </tr>
@@ -94,7 +88,12 @@
             <td class="px-6 py-4">
               <ArrowPathIcon
                 class="w-5 h-5 hover:cursor-pointer hover:animate-spin"
-                @click="action_button('yxcv')"
+                @click="
+                  $toast.open({
+                    message: 'Just a info!',
+                    type: 'info'
+                  })
+                "
               />
             </td>
           </tr>
@@ -108,7 +107,12 @@
             <td class="px-6 py-4">
               <ArrowPathIcon
                 class="w-5 h-5 hover:cursor-pointer hover:animate-spin"
-                @click="action_button('asdf')"
+                @click="
+                  $toast.open({
+                    message: 'This is a warning!',
+                    type: 'warning'
+                  })
+                "
               />
             </td>
           </tr>
@@ -122,19 +126,18 @@
             <td class="px-6 py-4">
               <ArrowPathIcon
                 class="w-5 h-5 hover:cursor-pointer hover:animate-spin"
-                @click="action_button('qwer')"
+                @click="
+                  $toast.open({
+                    message: 'Something went wrong!',
+                    type: 'error'
+                  })
+                "
               />
             </td>
           </tr>
         </tbody>
       </table>
     </div>
-  </div>
-
-  <div id="toast-area">
-    <Toast :type="'warning'" closable divide> Improve password difficulty. </Toast>
-
-    <Toast :type="'success'" alignment="end" closable divide> Item moved successfully. </Toast>
   </div>
 </template>
 
@@ -145,7 +148,6 @@ import ButtonDefaultStyle from '@/components/ButtonDefaultStyle.vue'
 import { useNewsStore } from '@/stores/NewsStore'
 
 import { ArrowPathIcon } from '@heroicons/vue/24/outline'
-import { Toast } from 'flowbite-vue'
 const newsStore = useNewsStore()
 
 let news_cursor = 0
