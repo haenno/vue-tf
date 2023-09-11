@@ -27,7 +27,7 @@ Check out the live demo at [haenno.de](https://haenno.de) and [haenno.github.io/
 | Background | `x` | `x` |
 | Nav-Background | `x` | `x` |
 | Nav-Text | `x` | `x` |
-| Button-Background | `bg-gray-200` | `dark:bg-gray-600` |
-| Button-Text | `text-gray-900` | `dark:text-white` |
-| Button-Hover | `hover:bg-gray-300` | `dark:hover:bg-gray-700` |
-| Button-Background-Active | `bg-gray-200` | `dark:bg-gray-600` |
+| Button-Background | `bg-stone-200` | `dark:bg-stone-600` |
+| Button-Text | `text-stone-900` | `dark:text-white` |
+| Button-Hover | `hover:bg-stone-300` | `dark:hover:bg-stone-700` |
+| Button-Background-Active | `bg-stone-200` | `dark:bg-stone-600` |
