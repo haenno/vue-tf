@@ -15,7 +15,7 @@ function showModal() {
 </script>
 
 <template>
-  <h1>You did it!</h1>
+  <h1>You did it!!!!111einelf</h1>
   <main>
     <ButtonDefaultStyle :button="{ text: 'Click me' }" @click="showModal" />
 
