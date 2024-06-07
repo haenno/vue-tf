@@ -1,4 +1,4 @@
-# vue-tf
+# haenno vue-tf
 
 Template for a frontend with Vite / Vue 3, Tailwind CSS and Flowbite. Also, a simple implementation of pinia as a store, access to an API (tasks: add, delete, change), and login to an API with saving the JWT token to a secure cookie.
 
