@@ -6,9 +6,9 @@
       <TaskForm />
     </div>
 
-    <tabs v-model="activeTab" class="p-5">
+    <FwbTabs v-model="activeTab" class="p-5">
       <!-- class appends to content DIV for all tabs -->
-      <tab name="all" title="All tasks" @click="filter = 'all'">
+      <FwbTab name="all" title="All tasks" @click="filter = 'all'">
         <spinner v-if="taskStore.isLoading" class="m-5" color="yellow" size="10" />
 
         <div v-if="filter === 'all'">
@@ -20,17 +20,17 @@
             <TaskDetails :task="task" />
           </div>
         </div>
-      </tab>
-      <tab name="favs" title="Favorites" @click="filter = 'favs'">
-        <spinner v-if="taskStore.isLoading" class="m-5" color="yellow" size="10" />
+      </FwbTab>
+      <FwbTab name="favs" title="Favorites" @click="filter = 'favs'">
+        <FwbSpinner v-if="taskStore.isLoading" class="m-5" color="yellow" size="10" />
         <div v-if="filter === 'favs'">
           <p>Favorite tasks: (You have {{ taskStore.favCount }} Favorites )</p>
           <div v-for="task in taskStore.favs" :key="task.id">
             <TaskDetails :task="task" />
           </div>
         </div>
-      </tab>
-    </tabs>
+      </FwbTab>
+    </FwbTabs>
   </main>
 </template>
 
@@ -39,15 +39,15 @@ import { defineComponent, ref } from 'vue'
 import { useTaskStore } from '@/stores/TaskStore'
 import TaskDetails from '@/components/TaskDetails.vue'
 import TaskForm from '@/components/TaskForm.vue'
-import { Spinner, Tab, Tabs } from 'flowbite-vue'
+import { FwbSpinner, FwbTab, FwbTabs } from 'flowbite-vue'
 
 export default defineComponent({
   components: {
     TaskDetails,
     TaskForm,
-    Tabs,
-    Tab,
-    Spinner
+    FwbTabs,
+    FwbTab,
+    FwbSpinner
   },
   setup() {
     const activeTab = ref('all')

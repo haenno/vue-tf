@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Modal } from 'flowbite-vue'
+import { FwbModal } from 'flowbite-vue'
 import { ref } from 'vue'
 import ButtonDefaultStyle from '@/components/ButtonDefaultStyle.vue'
 
@@ -19,7 +19,7 @@ function showModal() {
   <main>
     <ButtonDefaultStyle :button="{ text: 'Click me' }" @click="showModal" />
 
-    <Modal v-if="isShowModal" @close="closeModal">
+    <FwbModal v-if="isShowModal" @close="closeModal">
       <template #header>
         <div class="flex items-center text-lg">Terms of Service</div>
       </template>
@@ -38,18 +38,12 @@ function showModal() {
       </template>
       <template #footer>
         <div class="flex justify-between">
-          <ButtonDefaultStyle
-            :button="{ text: 'Decline' }"
-            class="hover:bg-red-400 dark:hover:bg-red-500"
-            @click="closeModal"
-          />
-          <ButtonDefaultStyle
-            :button="{ text: 'I accept' }"
-            class="hover:bg-green-400 dark:hover:bg-green-500"
-            @click="closeModal"
-          />
+          <ButtonDefaultStyle :button="{ text: 'Decline' }" class="hover:bg-red-400 dark:hover:bg-red-500"
+            @click="closeModal" />
+          <ButtonDefaultStyle :button="{ text: 'I accept' }" class="hover:bg-green-400 dark:hover:bg-green-500"
+            @click="closeModal" />
         </div>
       </template>
-    </Modal>
+    </FwbModal>
   </main>
 </template>
