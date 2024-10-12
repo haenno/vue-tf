@@ -56,21 +56,4 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v1
 
-      - name: Set BASE_PATH for haenno.de
-        run: |
-          echo "BASE_PATH=/" >> "$GITHUB_ENV"
-      - name: Build for haenno.de
-        run: npm run build
-
-      - name: Push to haenno.de
-        uses: crykn/copy_folder_to_another_repo_action@v1.0.6
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-        with:
-          source_folder: './dist'
-          destination_repo: 'haenno/haenno.de'
-          destination_folder: 'html'
-          user_email: 'haenno@web.de'
-          user_name: 'haenno'
-          destination_branch: 'main'
-          commit_msg: '[GHA] Update the HTML files.'
+    
